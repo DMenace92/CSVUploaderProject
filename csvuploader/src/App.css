@@ -15,6 +15,13 @@ input[type="file"] {
   border-radius: 4px;
   margin-bottom: 20px;
 }
+.downloadHolder{
+  z-index: 2;
+  height:180px;
+}
+.downloadImage{
+  height:180px;
+}
 
 button {
   padding: 10px 20px;

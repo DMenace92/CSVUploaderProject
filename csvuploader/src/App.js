@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import DownloadImage from './images/download-file.png'
+import FileDownload from './images/UserForm.csv'
 import './App.css';
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
 
   const handleFileUpload = (e) => {
     setSelectedFile(e.target.files[0]);
+ 
   };
 
   const handleUpload = async () => {
@@ -20,6 +23,8 @@ function App() {
         },
       });
       console.log('File uploaded successfully');
+      alert("File was successfully Uploaded!")
+      setSelectedFile("")
     } catch (error) {
       console.error('Error uploading file:', error);
     }
@@ -32,6 +37,12 @@ function App() {
 
            <input type="file" accept=".csv" onChange={handleFileUpload} />
       <button onClick={handleUpload}>Upload</button>
+      <div className="downloadHolder">
+      <a href={FileDownload} download="UserForm">
+                                   
+      <img className='downloadImage' src={DownloadImage} alt="this is a download"></img>
+       </a>
+       </div>
 
     </div>
   );
